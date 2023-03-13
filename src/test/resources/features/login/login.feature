@@ -1,4 +1,4 @@
-
+@smoke
 Feature: Login Functionality
 
   Background: Login page
