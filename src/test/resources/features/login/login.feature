@@ -1,10 +1,12 @@
-@smoke
+@FIDEX10-451 @smoke
 Feature: Login Functionality
 
   Background: Login page
     Given User is on the login page
 
+
   #Test Case 1
+  @FIDEX10-446
   Scenario Outline: Login with valid credentials
     When User enters email "<email>"
     And User enters password "<password>"
@@ -19,6 +21,7 @@ Feature: Login Functionality
       | posmanager79@info.com   | posmanager   |
 
   #Test Case 2
+  @FIDEX10-447
   Scenario Outline: Login with invalid credentials
     When User enters email "<email>"
     And User enters password "<password>"
@@ -34,6 +37,7 @@ Feature: Login Functionality
 
   #Test Case 3
   #"Please fill out this field" message should be displayed if the password or username is empty"
+  @FIDEX10-448
   Scenario Outline: Login with empty email or password
     When User enters email "<email>"
     And User enters password "<password>"
@@ -48,13 +52,15 @@ Feature: Login Functionality
       | posmanager79@info.com   |              |
 
   #Test Case 4
+  @FIDEX10-449
   Scenario: User should see the password in bullet signs by default
     When User enters password "password"
     Then user should see it in bullet signs by default
 
 
   #Test Case 5
-  Scenario Outline: User should be able to use "Enter" key of the keyboard on the login page.
+  @FIDEX10-450
+  Scenario Outline: User should be able to use "Enter" key of the keyboard on the login page
     When User enters email "<email>"
     And User enters password "<password>"
     And User hits the Enter key
