@@ -24,7 +24,11 @@ public class Driver {
 
     private static String browser;
 
+    static ChromeOptions option = new ChromeOptions();
+
     public static WebDriver getDriver(){
+
+        option.addArguments("--remote-allow-origins=*");
 
         if (driver == null) {
 
